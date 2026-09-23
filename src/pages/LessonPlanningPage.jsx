@@ -48,24 +48,6 @@ export default function LessonPlanningPage({ data }) {
         tag="Academic Delivery"
         title="Lesson Planning"
         subtitle={`Subject Coordinator: ${data?.facultyData?.coordinator || 'Prof. Nishat Shaikh'} • Course: ${data?.meta?.code || 'CEUC301'}`}
-        rightContent={
-          parsedSheet?.directUrl && (
-            <a
-              href={parsedSheet.directUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary btn-sm"
-              id="open-sheet-header-btn"
-            >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              Open {selectedDivision} in Google Sheets ↗
-            </a>
-          )
-        }
       />
 
       {/* Division Selector & Faculty Allocations */}
@@ -210,25 +192,6 @@ export default function LessonPlanningPage({ data }) {
                   Grid Mode
                 </button>
               </div>
-
-              {/* Direct Open Button */}
-              {parsedSheet?.directUrl && (
-                <a
-                  href={parsedSheet.directUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary btn-sm"
-                  id="direct-open-sheet-btn"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
-                >
-                  <span>Open in Google Sheets</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg>
-                </a>
-              )}
             </div>
           </div>
 
