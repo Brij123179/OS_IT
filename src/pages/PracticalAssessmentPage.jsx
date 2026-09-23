@@ -62,11 +62,11 @@ export default function PracticalAssessmentPage({ data, onToast }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.4rem' }}>
                 <span>Practical Performance (Journal/Lab Work):</span>
-                <strong style={{ color: 'var(--text-primary)' }}>15 Marks</strong>
+                <strong style={{ color: 'var(--text-primary)' }}>10 Marks</strong>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span>Practical Internal Examination:</span>
-                <strong style={{ color: 'var(--text-primary)' }}>10 Marks</strong>
+                <strong style={{ color: 'var(--text-primary)' }}>15 Marks</strong>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ export default function Footer({ meta, setActivePage }) {
   const ictUrl = meta?.instructionalToolsUrl || "https://drive.google.com/drive/folders/15iGzzOxu6NIdt03TgINZRteYsY9UdFpj?usp=sharing";
   const pedagogyUrl = meta?.pedagogicalPlanningUrl || "https://drive.google.com/drive/folders/1vRHixVCcNtzafO1n3BaO3PdWhiodE1EQ";
   const enrichmentUrl = meta?.contentEnrichmentUrl || "https://drive.google.com/drive/folders/1KtbMiTAJ2GZOtohRNWXL2K5Agv8Nzn3V";
+  const nptelUrl = meta?.nptelCourseUrl || "https://onlinecourses.nptel.ac.in/e-learning/preview/noc26_cs123";
 
   return (
     <footer className="site-footer">
@@ -61,6 +62,11 @@ export default function Footer({ meta, setActivePage }) {
               <li>
                 <a href={enrichmentUrl} target="_blank" rel="noreferrer">
                   Content Enrichment Plan ↗
+                </a>
+              </li>
+              <li>
+                <a href={nptelUrl} target="_blank" rel="noreferrer">
+                  NPTEL Course Certification ↗
                 </a>
               </li>
             </ul>

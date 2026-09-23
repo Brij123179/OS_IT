@@ -208,9 +208,9 @@ export const courseTemplateData = {
     },
     continuousAssessment: {
       total: 25,
-      practicalPerformance: 15,
-      internalExam: 10,
-      description: "Practical Continuous Assessment (25 Marks): Performance (15M) + Internal Exam (10M)"
+      practicalPerformance: 10,
+      internalExam: 15,
+      description: "Practical Continuous Assessment (25 Marks): Performance (10M) + Internal Exam (15M)"
     },
     links: {
       labManual: "https://drive.google.com/file/d/1AC0w-Q1LGFGLsR-MNM94mFIo6IZTv7Ft/view?usp=drive_link",
@@ -408,6 +408,13 @@ export const courseTemplateData = {
         description: "Cloud repository of course notes, textbook slides, and reference materials for CEUC301.",
         url: "https://app.box.com/s/p3fa1bukgs",
         badge: "Box Repository"
+      },
+      {
+        id: "mat-5",
+        title: "NPTEL: Operating System Fundamentals (Swayam Portal)",
+        description: "Official 12-week NPTEL course and certification mapping directly to continuous evaluation.",
+        url: "https://onlinecourses.nptel.ac.in/e-learning/preview/noc26_cs123",
+        badge: "NPTEL Course"
       }
     ]
   },
