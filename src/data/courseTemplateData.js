@@ -414,7 +414,7 @@ export const courseTemplateData = {
     title: "Lesson Planning",
     sheets: {
       it1Url: "https://docs.google.com/spreadsheets/d/1ciKWxeze8ELJQHIgIDZBvCPxyO2lb71Y/edit?gid=1102866220#gid=1102866220",
-      it2Url: ""
+      it2Url: "https://docs.google.com/spreadsheets/d/1LUrKNOOZSM-s_PdZyMMSYJABAlDi4OH8/edit?gid=287454461#gid=287454461"
     },
     bridgeTopics: [
       {

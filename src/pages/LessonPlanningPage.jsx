@@ -33,8 +33,8 @@ export default function LessonPlanningPage({ data }) {
   
   // IT-1 is the sheet provided by the user (1ciKWxeze8ELJQHIgIDZBvCPxyO2lb71Y)
   const it1Url = sheets.it1Url || "https://docs.google.com/spreadsheets/d/1ciKWxeze8ELJQHIgIDZBvCPxyO2lb71Y/edit?gid=1102866220#gid=1102866220";
-  // IT-2 is awaiting the link from user/coordinator
-  const it2Url = sheets.it2Url || "";
+  // IT-2 sheet provided by user (1LUrKNOOZSM-s_PdZyMMSYJABAlDi4OH8)
+  const it2Url = sheets.it2Url || "https://docs.google.com/spreadsheets/d/1LUrKNOOZSM-s_PdZyMMSYJABAlDi4OH8/edit?gid=287454461#gid=287454461";
 
   const activeRawUrl = selectedDivision === 'IT-1' ? it1Url : it2Url;
   const parsedSheet = parseGoogleSheetUrl(activeRawUrl);
@@ -85,20 +85,6 @@ export default function LessonPlanningPage({ data }) {
             onClick={() => setSelectedDivision('IT-2')}
           >
             Division IT - 2
-            {!it2Url && (
-              <span 
-                style={{ 
-                  marginLeft: '0.5rem', 
-                  fontSize: '0.65rem', 
-                  padding: '0.15rem 0.4rem', 
-                  borderRadius: '999px', 
-                  background: 'var(--bg-card-hover)', 
-                  color: 'var(--text-muted)' 
-                }}
-              >
-                Awaiting Link
-              </span>
-            )}
           </button>
         </div>
 
@@ -397,20 +383,6 @@ export default function LessonPlanningPage({ data }) {
                 allowFullScreen
               />
             ) : null}
-          </div>
-
-          <div style={{ marginTop: '0.85rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-            <span>
-              Direct link: <a href={parsedSheet?.directUrl} target="_blank" rel="noreferrer" style={{ color: 'var(--accent-primary)', wordBreak: 'break-all' }}>{parsedSheet?.directUrl}</a>
-            </span>
-            <a 
-              href={parsedSheet?.directUrl} 
-              target="_blank" 
-              rel="noreferrer" 
-              style={{ color: 'var(--accent-primary)', fontWeight: 600 }}
-            >
-              Open in new tab ↗
-            </a>
           </div>
         </div>
       )}
