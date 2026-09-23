@@ -3,6 +3,10 @@ import React from 'react';
 export default function Footer({ meta, setActivePage }) {
   const currentYear = new Date().getFullYear();
 
+  const ictUrl = meta?.instructionalToolsUrl || "https://drive.google.com/drive/folders/15iGzzOxu6NIdt03TgINZRteYsY9UdFpj?usp=sharing";
+  const pedagogyUrl = meta?.pedagogicalPlanningUrl || "https://drive.google.com/drive/folders/1vRHixVCcNtzafO1n3BaO3PdWhiodE1EQ";
+  const enrichmentUrl = meta?.contentEnrichmentUrl || "https://drive.google.com/drive/folders/1KtbMiTAJ2GZOtohRNWXL2K5Agv8Nzn3V";
+
   return (
     <footer className="site-footer">
       <div className="container">
@@ -35,11 +39,30 @@ export default function Footer({ meta, setActivePage }) {
             </ul>
           </div>
 
-          {/* Col 3: Academic Resources */}
+          {/* Col 3: Academic Resources & Department Planning */}
           <div className="footer-col">
             <h4>Course Resources</h4>
             <ul className="footer-links">
-              <li><a href={meta?.syllabusPdfUrl} target="_blank" rel="noreferrer">Download Syllabus ↗</a></li>
+              <li>
+                <a href={meta?.syllabusPdfUrl} target="_blank" rel="noreferrer">
+                  Download Syllabus ↗
+                </a>
+              </li>
+              <li>
+                <a href={ictUrl} target="_blank" rel="noreferrer">
+                  Instructional Tools & ICT Readiness ↗
+                </a>
+              </li>
+              <li>
+                <a href={pedagogyUrl} target="_blank" rel="noreferrer">
+                  Pedagogical Planning & Learning Design ↗
+                </a>
+              </li>
+              <li>
+                <a href={enrichmentUrl} target="_blank" rel="noreferrer">
+                  Content Enrichment Plan ↗
+                </a>
+              </li>
             </ul>
           </div>
 

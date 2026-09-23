@@ -33,6 +33,9 @@ export const courseTemplateData = {
     universityPapersUrl: "https://drive.google.com/drive/folders/1Xf6UtOgUukJ-jlsQnytWRowncMfkLlHR?usp=sharing",
     presentationTopicsUrl: "https://drive.google.com/file/d/1nfr5iy8WTxBF6Id-dTJrIOKRFkafYXwZ/view?usp=drive_link",
     nptelCourseUrl: "https://onlinecourses.nptel.ac.in/e-learning/preview/noc26_cs123",
+    instructionalToolsUrl: "https://drive.google.com/drive/folders/15iGzzOxu6NIdt03TgINZRteYsY9UdFpj?usp=sharing",
+    pedagogicalPlanningUrl: "https://drive.google.com/drive/folders/1vRHixVCcNtzafO1n3BaO3PdWhiodE1EQ",
+    contentEnrichmentUrl: "https://drive.google.com/drive/folders/1KtbMiTAJ2GZOtohRNWXL2K5Agv8Nzn3V",
     coordinator: "Prof. Nishat Shaikh",
     contactEmail: "os.it@charusat.ac.in"
   },
