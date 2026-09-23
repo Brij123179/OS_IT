@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -9,13 +9,70 @@ import PracticalAssessmentPage from './pages/PracticalAssessmentPage';
 import MaterialsPage from './pages/MaterialsPage';
 import { courseTemplateData } from './data/courseTemplateData';
 
+// Map pathnames to internal page keys
+const ROUTE_MAP = {
+  '/': 'home',
+  '/home': 'home',
+  '/syllabus': 'syllabus',
+  '/lessons': 'lessons',
+  '/lesson-planning': 'lessons',
+  '/theory': 'theory',
+  '/theory-assessment': 'theory',
+  '/practical': 'practical',
+  '/practical-assessment': 'practical',
+  '/material': 'materials',
+  '/materials': 'materials'
+};
+
+// Map internal page keys to canonical URL paths
+const PAGE_TO_URL = {
+  home: '/home',
+  syllabus: '/syllabus',
+  lessons: '/lesson-planning',
+  theory: '/theory-assessment',
+  practical: '/practical-assessment',
+  materials: '/materials'
+};
+
+function getPageFromCurrentPath() {
+  if (typeof window === 'undefined') return 'home';
+  const pathname = window.location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+  return ROUTE_MAP[pathname] || 'home';
+}
+
 export default function App() {
-  // Page Routing State ('home' | 'syllabus' | 'lessons' | 'theory' | 'practical' | 'materials')
-  const [activePage, setActivePage] = useState('home');
+  // Page Routing State initialized from URL
+  const [activePage, setActivePageState] = useState(() => getPageFromCurrentPath());
 
   // Global Toast Notifications State
   const [toasts, setToasts] = useState([]);
 
+  // Navigate handler that synchronizes URL in browser address bar
+  const setActivePage = useCallback((pageId, shouldPushHistory = true) => {
+    setActivePageState(pageId);
+    
+    if (shouldPushHistory && typeof window !== 'undefined') {
+      const canonicalUrl = PAGE_TO_URL[pageId] || `/${pageId}`;
+      const currentClean = window.location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+      
+      if (currentClean !== canonicalUrl) {
+        window.history.pushState({ page: pageId }, '', canonicalUrl);
+      }
+    }
+  }, []);
+
+  // Listen for browser Back/Forward (popstate)
+  useEffect(() => {
+    const handlePopState = () => {
+      const targetPage = getPageFromCurrentPath();
+      setActivePage(targetPage, false);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [setActivePage]);
+
+  // Keep light theme active
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', 'light');
     try {

@@ -31,12 +31,12 @@ export default function Footer({ meta, setActivePage }) {
           <div className="footer-col">
             <h4>Quick Navigation</h4>
             <ul className="footer-links">
-              <li><button onClick={() => { setActivePage('home'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Home</button></li>
-              <li><button onClick={() => { setActivePage('syllabus'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Syllabus</button></li>
-              <li><button onClick={() => { setActivePage('lessons'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Lesson Planning</button></li>
-              <li><button onClick={() => { setActivePage('theory'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Theory Assessment</button></li>
-              <li><button onClick={() => { setActivePage('practical'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Practical Assessment</button></li>
-              <li><button onClick={() => { setActivePage('materials'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Material</button></li>
+              <li><a href="/home" onClick={(e) => { e.preventDefault(); setActivePage('home'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Home</a></li>
+              <li><a href="/syllabus" onClick={(e) => { e.preventDefault(); setActivePage('syllabus'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Syllabus</a></li>
+              <li><a href="/lesson-planning" onClick={(e) => { e.preventDefault(); setActivePage('lessons'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Lesson Planning</a></li>
+              <li><a href="/theory-assessment" onClick={(e) => { e.preventDefault(); setActivePage('theory'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Theory Assessment</a></li>
+              <li><a href="/practical-assessment" onClick={(e) => { e.preventDefault(); setActivePage('practical'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Practical Assessment</a></li>
+              <li><a href="/materials" onClick={(e) => { e.preventDefault(); setActivePage('materials'); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Material</a></li>
             </ul>
           </div>
 
