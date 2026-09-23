@@ -25,7 +25,7 @@ export default function MaterialsPage({ data }) {
           subtitle="Direct links to online slide directories, university codices, and textbook companion portals."
         />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem' }}>
           {onlineCourseMaterials.map((mat) => (
             <div key={mat.id} className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '1.5rem' }}>
               <div>

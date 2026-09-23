@@ -27,7 +27,7 @@ export default function PracticalAssessmentPage({ data, onToast }) {
           <span className="badge badge-emerald" style={{ fontSize: '0.85rem' }}>Total: 50 Marks</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
           
           {/* Card 1: University Exam */}
           <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>

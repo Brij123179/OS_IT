@@ -28,7 +28,7 @@ export default function TheoryAssessmentPage({ data }) {
           Continuous internal evaluation and university examination criteria for <strong>{meta?.code || 'CEUC301'}: {meta?.name || 'Fundamentals of Operating System Design'}</strong>, Information Technology, CSPIT, CHARUSAT.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.75rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.75rem' }}>
           
           {/* Card 1: Theory Continuous Assessment (50 Marks) */}
           <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)', display: 'flex', flexDirection: 'column' }}>

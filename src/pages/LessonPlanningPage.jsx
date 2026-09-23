@@ -253,7 +253,8 @@ export default function LessonPlanningPage({ data }) {
                 title={`Division ${selectedDivision} Lesson Planning Sheet`}
                 style={{
                   width: '100%',
-                  height: '760px',
+                  height: 'min(760px, 80vh)',
+                  minHeight: '450px',
                   border: 'none',
                   display: 'block'
                 }}

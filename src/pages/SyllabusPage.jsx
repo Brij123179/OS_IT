@@ -116,7 +116,7 @@ export default function SyllabusPage({ data }) {
             <h3 style={{ margin: 0, fontSize: '1.25rem' }}>Bridge Topics (Pre-requisite Modules)</h3>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem' }}>
             {filteredBridgeTopics.map((bt) => (
               <div key={bt.id} className="card" style={{ borderLeft: '4px solid var(--accent-purple)', padding: '1.5rem' }}>
                 <h4 style={{ fontSize: '1.05rem', margin: '0 0 0.5rem', color: 'var(--text-primary)' }}>

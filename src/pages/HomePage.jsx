@@ -11,7 +11,7 @@ export default function HomePage({ data, setActivePage }) {
       {/* 1. Hero Section */}
       <section className="hero-section" style={{ padding: '3.5rem 0 2.5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2.5rem', alignItems: 'center' }}>
             
             {/* Left Col: Hero Copy */}
             <div>
@@ -62,7 +62,7 @@ export default function HomePage({ data, setActivePage }) {
               </div>
 
               {/* Quick Info Row */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '1.25rem', paddingTop: '1.75rem', borderTop: '1px solid var(--border-subtle)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 90px), 1fr))', gap: '1rem', paddingTop: '1.75rem', borderTop: '1px solid var(--border-subtle)' }}>
                 <div>
                   <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.7rem', fontWeight: 800, color: 'var(--text-primary)' }}>
                     4.0
@@ -168,7 +168,7 @@ export default function HomePage({ data, setActivePage }) {
             }
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
             {courseOutcomes.map((co) => (
               <div key={co.code} className="card" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', borderLeft: '4px solid var(--accent-primary)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -197,7 +197,7 @@ export default function HomePage({ data, setActivePage }) {
             />
 
             <div className="card card-glass" style={{ padding: '2rem', border: '1px solid var(--border-medium)' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
                 <div style={{ background: '#f8fafc', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)', textAlign: 'center' }}>
                   <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>Lectures</div>
                   <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-primary)', marginTop: '0.25rem' }}>
@@ -228,7 +228,7 @@ export default function HomePage({ data, setActivePage }) {
               </div>
 
               {/* Theory and Practical Breakdown */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1.75rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem' }}>
                 <div style={{ border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '1.5rem', background: '#ffffff' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                     <h4 style={{ margin: 0, fontSize: '1.1rem' }}>Theory Assessment</h4>
@@ -336,7 +336,7 @@ export default function HomePage({ data, setActivePage }) {
               Division Teaching & Laboratory Allocation
             </h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.5rem' }}>
               {/* Division IT-1 */}
               <div className="card" style={{ padding: '1.75rem', borderTop: '4px solid var(--accent-primary)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
@@ -434,7 +434,7 @@ export default function HomePage({ data, setActivePage }) {
               Faculty Profiles
             </h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem' }}>
               {facultyList.map((faculty, idx) => (
                 <div key={idx} className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', padding: '1.5rem' }}>
                   <div style={{ 
