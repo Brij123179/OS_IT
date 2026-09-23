@@ -27,7 +27,6 @@ function parseGoogleSheetUrl(url) {
 export default function LessonPlanningPage({ data }) {
   const [selectedDivision, setSelectedDivision] = useState('IT-1');
   const [embedMode, setEmbedMode] = useState('preview'); // 'preview' | 'embed'
-  const [showTroubleshoot, setShowTroubleshoot] = useState(false);
 
   const sheets = data?.lessonPlanning?.sheets || {};
   
@@ -233,92 +232,7 @@ export default function LessonPlanningPage({ data }) {
             </div>
           </div>
 
-          {/* Quick Notice Banner with Troubleshooting Toggle */}
-          <div 
-            style={{ 
-              background: '#f8fafc', 
-              border: '1px solid #e2e8f0', 
-              borderRadius: 'var(--radius-md)', 
-              padding: '0.85rem 1.25rem', 
-              marginBottom: '1rem',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              gap: '0.75rem',
-              fontSize: '0.85rem',
-              color: 'var(--text-secondary)'
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-              <span style={{ fontSize: '1.1rem' }}>ℹ️</span>
-              <span>
-                Viewing Division {selectedDivision} live planner. For optimal editing or viewing full grid without iframe borders, open in Google Sheets.
-              </span>
-            </div>
-            
-            <button
-              type="button"
-              onClick={() => setShowTroubleshoot(!showTroubleshoot)}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'var(--accent-primary)',
-                fontWeight: 600,
-                cursor: 'pointer',
-                fontSize: '0.82rem',
-                textDecoration: 'underline'
-              }}
-            >
-              {showTroubleshoot ? 'Hide Loading Guide ▲' : 'Sheet not loading? Read this ▼'}
-            </button>
-          </div>
 
-          {/* Expandable Troubleshooting / Permission Guide */}
-          {showTroubleshoot && (
-            <div 
-              style={{ 
-                background: '#fffbeb', 
-                border: '1px solid #fef3c7', 
-                borderRadius: 'var(--radius-md)', 
-                padding: '1.25rem', 
-                marginBottom: '1.25rem',
-                fontSize: '0.85rem',
-                color: '#92400e'
-              }}
-            >
-              <h4 style={{ margin: '0 0 0.5rem 0', color: '#b45309', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="8" x2="12" y2="12"></line>
-                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                </svg>
-                Why might Google Sheets show "docs.google.com refused to connect" or a blank frame?
-              </h4>
-              <p style={{ margin: '0 0 0.75rem 0', lineHeight: 1.5 }}>
-                Modern browsers (Chrome, Edge, Safari) restrict <strong>third-party cookies</strong> inside embedded frames. If a Google Sheet requires user login or has restricted permissions, Google blocks the iframe via <code>X-Frame-Options: DENY</code>.
-              </p>
-              <div style={{ background: '#ffffff', padding: '0.85rem 1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #fde68a' }}>
-                <strong style={{ display: 'block', marginBottom: '0.35rem', color: '#78350f' }}>How to enable instant loading for everyone:</strong>
-                <ol style={{ margin: '0', paddingLeft: '1.25rem', lineHeight: 1.6 }}>
-                  <li>Open the sheet directly: <a href={parsedSheet?.directUrl} target="_blank" rel="noreferrer" style={{ color: '#2563eb', fontWeight: 600 }}>Click here to open in Google Sheets ↗</a></li>
-                  <li>Click <strong>Share</strong> (top right) → Change <em>General access</em> to <strong>"Anyone with the link"</strong> (Viewer).</li>
-                  <li>Go to <strong>File</strong> → <strong>Share</strong> → <strong>Publish to web</strong> → Select <em>Embed</em> or <em>Link</em> → Click <strong>Publish</strong>.</li>
-                </ol>
-              </div>
-              <div style={{ marginTop: '0.85rem', display: 'flex', gap: '0.75rem' }}>
-                <a
-                  href={parsedSheet?.directUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary btn-sm"
-                  style={{ background: '#d97706', borderColor: '#d97706' }}
-                >
-                  Open Direct Google Sheet ↗
-                </a>
-              </div>
-            </div>
-          )}
 
           {/* Embedded Google Sheet Iframe Container */}
           <div 
